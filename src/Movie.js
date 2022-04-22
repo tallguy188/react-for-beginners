@@ -5,7 +5,7 @@ function Movie() {
   return (
     <Router>
       <Switch>
-        <Route path="/movie">
+        <Route path="/movie/:id">
           <Detail />
         </Route>
         <Route path="/">
@@ -24,3 +24,4 @@ export default Movie;
 // 우리는 router 안에 route를 만들어줬고, 만약 누군가가 우리 웹사이트의 "/" url에 있다면 우리는 home 컴포넌트를 보여줄거다.
 
 // Link 컴포넌트는 브라우저 새로고침 없이 유저를 다른 페이지로 이동시켜주는 컴포넌트이다.
+// React Router은 동적 url을 지원한다. 동적이라는 뜻은 url에 변수를 넣을 수 있다는 의미이다.
