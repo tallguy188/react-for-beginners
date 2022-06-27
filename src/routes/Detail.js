@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useState } from "react";
 import { useParams } from "react-router-dom";
-import styles from "./Detail.module.css";
+import dstyles from "./Detail.module.css";
 function Detail() {
   const [loading, setLoading] = useState(true); // 로딩화면 만들기
   const [moviedetail, setMovieDetail] = useState([]); // json 정보들을 넣는 값.
@@ -19,9 +19,9 @@ function Detail() {
     getMovie();
   }, []);
   return (
-    <div className={styles.container}>
+    <div className={dstyles.container}>
       {loading ? (
-        <h1 className={styles.loader}>Loading...</h1>
+        <h1 className={dstyles.loader}>Loading...</h1>
       ) : (
         <div>
           <h1>{moviedetail.title}</h1>
