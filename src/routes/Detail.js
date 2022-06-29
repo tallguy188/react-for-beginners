@@ -21,7 +21,7 @@ function Detail() {
   return (
     <div className={dstyles.container}>
       {loading ? (
-        <h1 className={dstyles.loader}>Loading...</h1>
+        <div className={dstyles.loader}>Loading...</div>
       ) : (
         <div>
           <h1>{moviedetail.title}</h1>
