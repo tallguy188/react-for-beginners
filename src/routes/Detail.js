@@ -21,10 +21,12 @@ function Detail() {
   return (
     <div className={dstyles.container}>
       {loading ? (
-        <div className={dstyles.loader}>Loading...</div>
+        <div className={dstyles.loader}>
+          <span>Loading....</span>
+        </div>
       ) : (
-        <div>
-          <h1>{moviedetail.title}</h1>
+        <div className={dstyles.movie__Detail}>
+          <h2 className={dstyles.title}>{moviedetail.title}</h2>
           <img src={moviedetail.medium_cover_image} alt={moviedetail.title} />
           <p>{moviedetail.description_full}</p>
         </div>
