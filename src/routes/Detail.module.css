@@ -14,3 +14,11 @@
   font-size: 50px;
   font-weight: 500;
 }
+
+.movie__Detail {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 50px 0;
+  padding: 10px;
+}

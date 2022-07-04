@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import dstyles from "./Detail.module.css";
 function Detail() {
   const [loading, setLoading] = useState(true); // 로딩화면 만들기
-  const [moviedetail, setMovieDetail] = useState([]); // json 정보들을 넣는 값.
+  const [movieDetail, setMovieDetail] = useState([]); // json 정보들을 넣는 값.
 
   const { id } = useParams();
   const getMovie = async () => {
@@ -19,16 +19,41 @@ function Detail() {
     getMovie();
   }, []);
   return (
-    <div className={dstyles.container}>
+    <div className={dstyles.movie__Detail__container}>
       {loading ? (
         <div className={dstyles.loader}>
-          <span>Loading....</span>
+          <span>Loading...</span>
         </div>
       ) : (
         <div className={dstyles.movie__Detail}>
-          <h2 className={dstyles.title}>{moviedetail.title}</h2>
-          <img src={moviedetail.medium_cover_image} alt={moviedetail.title} />
-          <p>{moviedetail.description_full}</p>
+          <img
+            src={movieDetail.medium_cover_image}
+            alt={movieDetail.title}
+            className={dstyles.movie__Detail__img}
+          />
+          <img
+            src={movieDetail.background_image_original}
+            alt={movieDetail.title}
+            className={dstyles.movie__Detail__background__img}
+          />
+          <div className={dstyles.movie__Detail__info}>
+            <h2 className={dstyles.title}>{movieDetail.title_long}</h2>
+            <h3
+              className={dstyles.rating}
+            >{`Raiting: ${movieDetail.rating}💛`}</h3>
+            <h3
+              className={dstyles.runtime}
+            >{`Runtime: ${movieDetail.runtime} min🕒`}</h3>
+            <ul>
+              {movieDetail.genres.map((g) => (
+                <li key={g}>{g}</li>
+              ))}
+            </ul>
+            <div className={dstyles.movie__Description}>
+              <h3 className={dstyles.description}>Description💬</h3>
+              <span>{movieDetail.description_full}</span>
+            </div>
+          </div>
         </div>
       )}
     </div>
